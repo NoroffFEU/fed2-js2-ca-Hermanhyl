@@ -34,8 +34,6 @@ export async function login({ email, password }) {
             window.location.href = "/"
             alert(`Successfully logged in`);
             
-
-
         } 
     } catch (error) {
         console.error("Error during login:", error);
