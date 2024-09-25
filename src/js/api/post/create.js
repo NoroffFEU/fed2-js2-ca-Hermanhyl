@@ -1,17 +1,14 @@
 import { API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";
 
-     // const accessToken = getAuthToken();
-    //const createButton = document.getElementById("create-button");
 
-export async function createPost({ title, body, tags, image, alt }) {
+export async function createPost({ title, body, tags, media }) {
     
         const requestBody = {
-            title: title,
-            body: body,
-            tags: [tags],
-            url: image,
-            alt: alt, 
+            title, 
+            body, 
+            tags, 
+            media
         };
         console.log("request-body", requestBody);
         
