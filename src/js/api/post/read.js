@@ -78,7 +78,6 @@ export async function readPosts(limit = 12, page = 1, tag) {
         
         const data = await response.json();
         const posts = data.data
-        console.log(data);
         return posts;
     } catch (error) {
         console.error("Error fetching posts:", error);
@@ -117,7 +116,6 @@ export async function readPostsByUser(name, limit = 12, page = 1, tag) {
         
         const data = await response.json();
         const posts = data.data
-        console.log(data);
         
         return posts;
     } catch (error) {
