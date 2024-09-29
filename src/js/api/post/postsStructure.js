@@ -1,4 +1,25 @@
 
+/**
+ * Displays a list of posts in the HTML container with the ID "postsContainer".
+ * 
+ * This function dynamically creates and appends elements for each post, including the title, author, date, body, tags, media, and a "View Post" button.
+ * If a media URL is present, it displays the image. The "View Post" button navigates the user to the individual post page.
+ * 
+ * @function displayPosts
+ * @param {Array<Object>} posts - The array of post objects to display.
+ * @param {string} loggedInUserName - The username of the currently logged-in user.
+ * @param {string} posts[].title - The title of the post.
+ * @param {Object} posts[].author - The author of the post.
+ * @param {string} posts[].author.name - The author's name.
+ * @param {string} posts[].body - The body content of the post.
+ * @param {Array<string>} [posts[].tags] - Optional tags for the post.
+ * @param {Object} [posts[].media] - Optional media object associated with the post.
+ * @param {string} [posts[].media.url] - The URL of the post's media.
+ * @param {string} posts[].created - The creation date of the post in ISO format.
+ * @param {string} posts[].id - The unique identifier for the post.
+ * @returns {void}
+ */
+
 export const displayPosts = (posts, loggedInUserName) => {
     const postContainer = document.getElementById("postsContainer");
 
