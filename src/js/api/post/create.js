@@ -10,6 +10,7 @@ export async function createPost({ title, body, tags, media }) {
             tags, 
             media
         };
+        
         console.log("request-body", requestBody);
         
         try {
