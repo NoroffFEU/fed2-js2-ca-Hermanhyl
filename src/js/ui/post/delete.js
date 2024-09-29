@@ -28,8 +28,6 @@ export async function onDeletePost(id) {
         } else {
             alert('Failed to delete the post.');
         }
-    } else {
-        console.log('User canceled the delete action.');
-    }
+    } 
     
 }
