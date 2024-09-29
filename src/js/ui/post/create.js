@@ -8,9 +8,12 @@ export async function onCreatePost(event) {
     const createData = {
         title: formData.get("title"), 
         body: formData.get("body"), 
-        tags: formData.get("tags"), 
-        url: formData.get("image"),
-        alt: formData.get("alt")
+        tags: formData.get("tags")?formData.get("tags").split(',').map(tag => tag.trim()):[], 
+        media: {
+            url: formData.get("image"),
+            alt: formData.get("alt")
+        }
+        
         
     }
 
