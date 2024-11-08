@@ -33,6 +33,7 @@ export const displayPost = (post) => {
 
     const title = document.createElement("h2");
     title.innerText = post.title;
+    title.className = "h2-title text-2xl text-bold leading-tight pb-3"
 
     const userName = post.author.name;
     const postDate = new Date(post.created).toLocaleDateString();
@@ -42,12 +43,12 @@ export const displayPost = (post) => {
 
     const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
-        deleteButton.className = 'delete-button';
+        deleteButton.className = 'delete-button bg-red-700 text-white rounded-md px-4 py-2 font-bold hover:bg-red-300 hover:shadow-md transition duration-200 ease-in-out m-3';
         deleteButton.addEventListener('click', () => onDeletePost());
 
     const editButton = document.createElement('button');
         editButton.innerText = "Edit"
-        editButton.className = "edit-button"
+        editButton.className = 'edit-button bg-blue-700 text-white rounded-md px-4 py-2 font-bold hover:bg-blue-300 hover:shadow-md transition duration-200 ease-in-out m-3';
         editButton.addEventListener('click', () => window.location.href = `/post/edit/?id=${post.id}`)
 
     const image = document.createElement("img");
