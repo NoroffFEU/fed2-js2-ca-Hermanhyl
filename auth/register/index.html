@@ -6,52 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    
   </head>
 
-  <body>
-    <h1>Register</h1>
+  <body class="bg-blue-950">
 
-    <button id="logoutBtn">Logout</button>
+<!-- Navigation bar -->
+<nav class="bg-gray-800 text-white p-4 flex justify-between items-center ">
 
-    <form name="register">
-      <div>
-        <label for="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          required
-          maxlength="20"
-          pattern="^[\w]+$"
-          title="Please enter a username using only letters and numbers"
-        />
-      </div>
+  <!-- Logo -->
+   <div class="rounded p-2 bg-white ">
+    <a href="/"><img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-8 w-15 mr-4" /></a>
+  </div>
+  
+  <!-- Navigation links -->
+  <ul class="nav-links flex items-center">
+    <li class="mr-6">
+      <a href="/" class="text-sm hover:text-gray-300">Home</a>
+    </li>
+    <li class="mr-6">
+      <a href="/profile/" class="text-sm hover:text-gray-300">My Profile</a>
+    </li>
+    <li class="mr-6">
+      <a href="/auth/login/" class="text-sm hover:text-gray-300">Login</a>
+    </li>
+    <li class="mr-6">
+      <a href="/auth/register/" class="text-sm hover:text-gray-300">Register</a>
+    </li>
+    <li class="mr-6">
+      <a href="/post/create/" class="text-sm hover:text-gray-300">Create Post</a>
+    </li>
+    <li>
+      <button id="logoutBtn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+    </li>
+  </ul>
+  
+  <!-- Mobile menu button -->
+  <button class="mobile-menu-button md:hidden" aria-label="Open mobile menu">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+  
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden md:hidden">
+    <ul class="flex flex-col p-4">
+      <li class="py-2">
+        <a href="/" class="text-sm hover:text-gray-300">Home</a>
+      </li>
+      <li class="py-2">
+        <a href="/profile/" class="text-sm hover:text-gray-300">My Profile</a>
+      </li>
+      <li class="py-2">
+        <a href="/auth/login/" class="text-sm hover:text-gray-300">Login</a>
+      </li>
+      <li class="py-2">
+        <a href="/auth/register/" class="text-sm hover:text-gray-300">Register</a>
+      </li>
+      <li class="py-2">
+        <a href="/post/create/" class="text-sm hover:text-gray-300">Create Post</a>
+      </li>
+      <li class="py-2">
+        <button id="logoutBtn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-      <div>
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          required
-          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-          title="Please enter a valid noroff.no or stud.noroff.no address"
-        />
-      </div>
+<!-- Content -->
 
-      <div>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          minlength="8"
-        />
-      </div>
+<h1 class="text-3xl text-white font-bold mb-4 flex justify-center mt-5">Register</h1>
 
-      <a href="/auth/login/">Login</a>
-      <button>Register</button>
-    </form>
-  </body>
+
+
+<form name="register" class="max-w-md mx-auto p-4 bg-white rounded shadow-md">
+  <div class="mb-4">
+    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+    <input
+      id="name"
+      type="text"
+      name="name"
+      required
+      maxlength="20"
+      pattern="^[\w]+$"
+      title="Please enter a username using only letters and numbers"
+      class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    />
+  </div>
+
+  <div class="mb-4">
+    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      required
+      pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+      title="Please enter a valid noroff.no or stud.noroff.no address"
+      class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    />
+  </div>
+
+  <div class="mb-4">
+    <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      required
+      minlength="8"
+      class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    />
+  </div>
+  
+
+  <div class="flex justify-between">
+    <a href="/auth/login/" class="text-blue-500 hover:text-blue-800">Login</a>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Register</button>
+  </div>
+</form>
+
+<!-- Footer -->
+<div class="absolute bottom-0 h-12 w-full bg-gray-700 text-white text-center p-4 mt-auto">
+  &copy; 2024
+</div>
+</div>
+
+</body>
+
+  
 </html>
