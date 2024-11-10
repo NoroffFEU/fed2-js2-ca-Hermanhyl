@@ -33,13 +33,14 @@ export const displayPost = (post) => {
 
     const title = document.createElement("h2");
     title.innerText = post.title;
-    title.className = "h2-title text-2xl text-bold leading-tight pb-3"
+    title.className = "h2-title mt-2 text-2xl text-bold pb-3 break-words"
 
     const userName = post.author.name;
     const postDate = new Date(post.created).toLocaleDateString();
 
     const text = document.createElement("p");
     text.innerText = post.body;
+    text.className = "break-words"
 
     const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
