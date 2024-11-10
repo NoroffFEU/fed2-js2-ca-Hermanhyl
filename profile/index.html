@@ -8,16 +8,96 @@
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <h1>Profile</h1>
 
-    <button id="logoutBtn">Logout</button>
+      <!-- Navigation bar -->
+<nav class="bg-gray-800 text-white p-4 flex justify-between items-center ">
+  <!-- Logo -->
+   <div class="rounded p-2 bg-white ">
+    <a href="/"><img src="/images/noroff-logo.png" alt="Noroff Logo" class="h-8 w-15 mr-4" /></a>
+  </div>
   
+  <!-- Navigation links -->
+  <ul class="nav-links flex items-center">
+    <li class="mr-6">
+      <a href="/" class="text-sm hover:text-gray-300">Home</a>
+    </li>
+    <li class="mr-6">
+      <a href="/profile/" class="text-sm hover:text-gray-300">My Profile</a>
+    </li>
+    <li class="mr-6">
+      <a href="/auth/login/" class="text-sm hover:text-gray-300">Login</a>
+    </li>
+    <li class="mr-6">
+      <a href="/auth/register/" class="text-sm hover:text-gray-300">Register</a>
+    </li>
+    <li class="mr-6">
+      <a href="/post/create/" class="text-sm hover:text-gray-300">Create Post</a>
+    </li>
+    <li>
+      <button id="logoutBtn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+    </li>
+  </ul>
+  
+  <!-- Mobile menu button -->
+  <button class="mobile-menu-button md:hidden" aria-label="Open mobile menu">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+  
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden md:hidden">
+    <ul class="flex flex-col p-4">
+      <li class="py-2">
+        <a href="/" class="text-sm hover:text-gray-300">Home</a>
+      </li>
+      <li class="py-2">
+        <a href="/profile/" class="text-sm hover:text-gray-300">My Profile</a>
+      </li>
+      <li class="py-2">
+        <a href="/auth/login/" class="text-sm hover:text-gray-300">Login</a>
+      </li>
+      <li class="py-2">
+        <a href="/auth/register/" class="text-sm hover:text-gray-300">Register</a>
+      </li>
+      <li class="py-2">
+        <a href="/post/create/" class="text-sm hover:text-gray-300">Create Post</a>
+      </li>
+      <li class="py-2">
+        <button id="logoutBtn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <form name="updateProfile">
-      <button>Update Profile</button>
-    </form>
+<!-- Content -->
 
-    <div class="postUserContainer" id="postUserContainer"></div>
+<div class="h-screen flex flex-col">
+  <!-- Banner -->
+  <div class="relative h-64 bg-cover bg-center" style="background-image: url('https://picsum.photos/2000/300');">
+    <div class="avatarCircle absolute left-1/4 mt-32">
+      <div class="avatarPhoto h-48 w-48 bg-cover bg-center rounded-full" style="background-image: url('https://picsum.photos/200/300');"></div>
+    </div>
+  </div>
+  <!-- Main Content -->
+  <div class="flex-1 flex justify-center items-center bg-blue-950">
+    <div class="flex flex-col">
+      <h1 class="text-3xl text-white font-bold mb-4 text-center mt-2">Name</h1>
+      <div class="max-w-md w-full flex justify-center items-center">
+        <div class="max-w-md bg-white p-4 rounded-md shadow-md">
+          <form name="updateProfile">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update Profile</button>
+          </form>
+          <div class="postUserContainer" id="postUserContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="h-12 bg-gray-700 text-white text-center p-4 mt-auto">
+    &copy; 2024
+  </div>
+</div>
 
   </body>
 </html>
